@@ -3,7 +3,6 @@ const chalk = require("chalk");
 const gradient = require("gradient-string");
 
 const app = express();
-const PORT = 3000;
 
 app.use((req, res, next) => {
   const now = new Date().toLocaleTimeString();
@@ -23,6 +22,4 @@ app.get("/hello", (req, res) => {
   res.json({ message: `Hello ${name}!` });
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Server running at: http://localhost:${PORT}\n`);
-});
+module.exports = app;
