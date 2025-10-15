@@ -1,12 +1,9 @@
 const express = require("express");
-const chalk = require("chalk");
-const gradient = require("gradient-string");
-
 const app = express();
 
 app.use((req, res, next) => {
   const now = new Date().toLocaleTimeString();
-  console.log(gradient.pastel.multiline(`[${now} ${req.method} ${req.url}]`));
+  console.log(`[${now} ${req.method} ${req.url}]`);
   next();
 });
 
